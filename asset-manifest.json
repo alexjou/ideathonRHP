@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/static/js/main.cdd4e5c3.js",
-    "static/media/LandingPage.png": "/static/media/LandingPage.96d643fbdf3090865def.png",
-    "static/media/cadeira1.png": "/static/media/cadeira1.2eab0c18582629c03c56.png",
-    "static/media/cadeira3.png": "/static/media/cadeira3.1139beb31bb12a5cfbf0.png",
-    "static/media/cadeira2.png": "/static/media/cadeira2.fb38596cf2c84398a2fc.png",
-    "index.html": "/index.html",
-    "main.cdd4e5c3.js.map": "/static/js/main.cdd4e5c3.js.map"
+    "main.js": "/ideathonRHP/static/js/main.b3c5831a.js",
+    "static/media/LandingPage.png": "/ideathonRHP/static/media/LandingPage.96d643fbdf3090865def.png",
+    "static/media/cadeira1.png": "/ideathonRHP/static/media/cadeira1.2eab0c18582629c03c56.png",
+    "static/media/cadeira3.png": "/ideathonRHP/static/media/cadeira3.1139beb31bb12a5cfbf0.png",
+    "static/media/cadeira2.png": "/ideathonRHP/static/media/cadeira2.fb38596cf2c84398a2fc.png",
+    "index.html": "/ideathonRHP/index.html",
+    "main.b3c5831a.js.map": "/ideathonRHP/static/js/main.b3c5831a.js.map"
   },
   "entrypoints": [
-    "static/js/main.cdd4e5c3.js"
+    "static/js/main.b3c5831a.js"
   ]
 }
