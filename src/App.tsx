@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './Components/Header';
+import LeitoStatus from './Components/LeitoStatus';
+import { PageWrapper, ContentWrapper, TextSection, ImagesSection } from './Styles/LandingPageStyles';
+import backgroundImage from './assets/LandingPage.png';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PageWrapper backgroundImage={backgroundImage}>
+      <Header />
+      <ContentWrapper>
+        <TextSection>
+          <h1>VITAL MAP</h1>
+          <h2>Com a VitalMap você tem um problema a menos para se preocupar!</h2>
+          <button>Saiba mais</button>
+        </TextSection>
+        <ImagesSection>
+          <LeitoStatus />
+        </ImagesSection>
+      </ContentWrapper>
+    </PageWrapper>
   );
 }
 
