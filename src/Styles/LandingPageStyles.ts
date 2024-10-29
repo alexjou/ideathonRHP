@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 
-interface PageWrapperProps {
-  backgroundImage: string; // Define o tipo da prop
-}
-
-export const PageWrapper = styled.div <PageWrapperProps>`
+export const PageWrapper = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url(${props => props.backgroundImage});
+  background-color: #4A5F63;
   background-size: cover; /* A imagem cobre toda a área */
   background-position: center; /* A imagem fica centralizada */
   background-attachment: fixed; /* A imagem fica fixa ao rolar a página */
@@ -31,18 +27,21 @@ export const TextSection = styled.div`
   color: #fff;
 
   h1 {
+    margin-left: 150px;
     font-size: 4rem;
-  color: #fff;
+    color: #fff;
   }
 
   h2 {
+    margin-left: 150px;
     font-size: 2rem;
     margin-top: 20px;
-  color: #fff;
+    color: #fff;
   }
 
   button {
     margin-top: 30px;
+    margin-left: 150px;
     padding: 10px 30px;
     border-radius: 50px;
     border: none;

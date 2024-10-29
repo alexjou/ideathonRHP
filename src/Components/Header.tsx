@@ -1,55 +1,68 @@
-// Header.tsx
-import React from 'react';
 import styled from 'styled-components';
-import logo from '../assets/logo.png';
+import imgLogo from '../assets/photo.png';
+import { FaSearch } from "react-icons/fa";
 
-const HeaderWrapper = styled.header`
+const ContainerHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.212);
+  margin: 30px;
 `;
 
-const Logo = styled.img`
-  height: 50px;
+const ContainerSearch = styled.div`
+  width: 500px;
+  padding: 10px;
+  border-radius: 50px;
+  border: 2px solid #ccc;
+  background-color:transparent;
+  outline: none;
 `;
 
-const Nav = styled.nav`
-  display: flex;
-  gap: 80px;
-  position: relative; /* Necessário para o pseudo-elemento */
-`;
+const Input = styled.input`
+  width: 90%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  background-color: transparent;
 
-const NavItem = styled.a`
-  position: relative;
-  text-decoration: none; /* Remove a decoração padrão */
-  padding: 10px 0; /* Espaçamento em cima e embaixo */
-  color: #fff; /* Ajuste a cor conforme necessário */
-
-  &.active::after {
-    content: '';
-    position: absolute;
-    left: -10px; /* Ajuste a posição à esquerda */
-    right: -10px; /* Ajuste a posição à direita */
-    bottom: 10px; /* Distância da linha até o texto */
-    height: 2px; /* Altura da linha */
-    background-color: #fff; /* Cor da linha */
+  &::placeholder {
+    color: #ccc;
   }
+`;
+
+const ContainerUserPhoto = styled.div`
+  display: flex;
+  align-items: center;
+  `;
+
+const ContainerUser = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  `;
+
+const ImgUser = styled.img`
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 `;
 
 const Header = () => {
   return (
-    <HeaderWrapper>
-      <Logo src={logo} alt="VitalMap Logo" />
-      <Nav>
-        <NavItem className="active" href="#about">About</NavItem>
-        <NavItem href="#product">Product</NavItem>
-        <NavItem href="#features">Features</NavItem>
-        <NavItem href="#news">News</NavItem>
-        <NavItem href="#menu">☰</NavItem>
-      </Nav>
-    </HeaderWrapper>
-  );
+    <ContainerHeader>
+      <ContainerSearch>
+        <FaSearch />
+        <Input type="text" placeholder="Pesquisar..." />
+      </ContainerSearch>
+      <ContainerUserPhoto>
+        <ContainerUser>
+          <p>Olá, Bruno Costa</p>
+          <p>Infermeiro</p>
+        </ContainerUser>
+        <ImgUser src={ imgLogo } alt="" />
+      </ContainerUserPhoto>
+    </ContainerHeader>
+  )
 };
 
 export default Header;
