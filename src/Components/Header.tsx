@@ -9,8 +9,11 @@ const ContainerHeader = styled.div`
 `;
 
 const ContainerSearch = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   width: 500px;
-  padding: 10px;
+  height: 50px;
   border-radius: 50px;
   border: 2px solid #ccc;
   background-color:transparent;
@@ -21,7 +24,7 @@ const Input = styled.input`
   width: 90%;
   border: none;
   outline: none;
-  padding: 10px;
+  padding: 5px;
   font-size: 16px;
   background-color: transparent;
 

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 150px;
+  margin-left: 100px;
   `;
 
 const ContainerCards = styled.div`
@@ -15,7 +15,7 @@ const ContainerCards = styled.div`
 const Cards = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 30px;
+
 `;
 
 const ContainerSalas = styled.div`
@@ -39,9 +39,6 @@ const Dashboard = () => {
         </Cards>
         <Cards>
           <h1>GESTÃO DE LEITOS</h1>
-        </Cards>
-        <Cards>
-          <h3>Leito 015</h3>
         </Cards>
       </ContainerCards>
     </Container>
