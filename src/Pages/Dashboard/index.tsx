@@ -1,5 +1,9 @@
 import Header from "../../Components/Header";
 import styled from 'styled-components';
+import VisaoGeral from "../../Components/VisaoGeral";
+import GestaoDeLeitos from "../../Components/GestaoDeLeitos";
+import InfoBalloon from "../../Components/InforBallon";
+import AssetsChat from "../../assets/01 align center.svg";
 
 const Container = styled.div`
   display: flex;
@@ -12,18 +16,37 @@ const ContainerCards = styled.div`
   justify-content: space-around;
 `;
 
-const Cards = styled.div`
-  display: flex;
-  flex-direction: column;
-
+const TitleNotificacoes = styled.h1`
+  margin: 35px 150px;
+  color: #E1E1E1;
+  font-family: Poppins;
+  font-size: 40px;
+  font-weight: 600;
 `;
 
-const ContainerSalas = styled.div`
-  margin-top: 20px;
+const ContainerChat = styled.div`
+  width: 134px;
+  height: 134px;
+  flex-shrink: 0;
   display: flex;
-  width: 500px;
-  height: 500px;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  right: 50px;
+  bottom: 50px;
   background-color: #2D393D;
+  border-radius: 50%;
+
+  img {
+    display: flex;
+    width: 73px;
+    height: 73px;
+    padding: 0px 0px 0px 0.072px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
 `;
 
 const Dashboard = () => {
@@ -31,16 +54,20 @@ const Dashboard = () => {
     <Container>
       <Header />
       <ContainerCards>
-        <Cards>
-          <h1>VISÃO GERAL</h1>
-          <ContainerSalas>
-
-          </ContainerSalas>
-        </Cards>
-        <Cards>
-          <h1>GESTÃO DE LEITOS</h1>
-        </Cards>
+        <VisaoGeral />
+        <GestaoDeLeitos />
+        <InfoBalloon
+          tipo={"ocupado"}
+          leitoNumero={0}
+          andar={0}
+          sala={0}
+          count={0}
+        />
       </ContainerCards>
+      <TitleNotificacoes>NOTIFICAÇÕES</TitleNotificacoes>
+      <ContainerChat>
+        <img src={ AssetsChat } alt="" />
+      </ContainerChat>
     </Container>
   );
 };

@@ -17,9 +17,8 @@ const InfoBalloonContainer = styled.div`
 margin-left: -200px;
 margin-top: 60px;
   width: 180px;
-  height: 150px;
   border-radius: 20px;
-  background-color: rgba(207, 207, 207, 0.2);
+  background-color: #2D393D;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   color: #fff;
@@ -95,7 +94,7 @@ const InfoBalloon: React.FC<InfoBalloonProps> = ({
   }
 
   return (
-    <InfoBalloonContainer style={{ height: tipo === 'livre' ? 150 : 220 }}>
+    <InfoBalloonContainer style={{ height: tipo === 'livre' ? 150 : tipo === 'higienizacao' ? 220 : 250 }}>
       <div style={{ backgroundColor: color, padding: 7, borderRadius: 20, width: '90%' }}>
         <LeitoText>LEITO {leitoNumero}</LeitoText>
       </div>
