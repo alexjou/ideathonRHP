@@ -44,3 +44,15 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+Criar um arquivo .env.local
+E adicionar os dados do firebase
+
+REACT_APP_FIREBASE_API_KEY=AIzaSyDBGM5cfs9XqpPfR2kuk2Hd1csQYDyAihE
+REACT_APP_FIREBASE_AUTH_DOMAIN=transplantpass-25f0a.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=transplantpass-25f0a
+REACT_APP_FIREBASE_STORAGE_BUCKET=transplantpass-25f0a.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=528972308259
+REACT_APP_FIREBASE_APP_ID=1:528972308259:web:533a36fc8e5925fb5ab696
+REACT_APP_FIREBASE_MEASUREMENT_ID=G-R9XPXRT6RF
