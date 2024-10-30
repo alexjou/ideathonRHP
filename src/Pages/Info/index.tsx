@@ -3,6 +3,8 @@ import Header from "../../Components/Header";
 import styled from 'styled-components';
 import { PieChart, Pie, Cell, Legend, Tooltip, BarChart, CartesianGrid, XAxis, YAxis, Bar, Label } from 'recharts';
 import SemiCircleChart from '../../Components/SemiCircleChart';
+import WeeklyFlowChart from '../../Components/WeeklyFlowChart';
+import InfoBalloon from '../../Components/InforBallon';
 
 const Container = styled.div`
   display: flex;
@@ -12,7 +14,7 @@ const Container = styled.div`
 
 const ContainerCards = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 `;
 
 const Cards = styled.div`
@@ -84,10 +86,6 @@ const dataPacientes = [
   { categoria: 'Alto', pacientes: 25, fill: '#FFA000' },
   { categoria: 'Moderado', pacientes: 38, fill: '#FFEB3B' },
   { categoria: 'Baixo', pacientes: 60, fill: '#4CAF50' }
-];
-
-const dataVel = [
-  { name: 'A', value: 10 },
 ];
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
@@ -207,7 +205,20 @@ export default function Info() {
               </Bar>
             </BarChart>
           </ContainerInformations>
+
+          <ContainerInformations style={{ height: 200 }}>
+            <WeeklyFlowChart />
+          </ContainerInformations>
         </Cards>
+
+        <InfoBalloon
+          tipo="higienizacao"
+          leitoNumero={2}
+          andar={1}
+          sala={3}
+          count={300}
+          previsaoLiberacao={15}
+        />
       </ContainerCards>
     </Container>
   );
