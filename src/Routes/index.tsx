@@ -1,17 +1,15 @@
 import { Routes as Router, Route } from 'react-router-dom';
 import Dashboard from '../Pages/Dashboard';
 import About from '../Pages/About';
+import Info from '../Pages/Info';
 
-
-
-function Routes() {
+export default function Routes() {
 
   return (
     <Router>
-      <Route path="/" element={ <About /> } />
-      <Route path="/dashboard" element={ <Dashboard /> } />
+      <Route path="/" element={<About />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/info" element={<Info />} />
     </Router>
   );
 }
-
-export default Routes;

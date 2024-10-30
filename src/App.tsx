@@ -1,16 +1,14 @@
 import React from 'react';
-import Routes from './Routes';
 import Menu from './Components/Menu';
 import { PageWrapper } from './Styles/LandingPageStyles';
+import AppRoutes from './Routes';
 
-function App() {
+export default function App() {
 
   return (
     <PageWrapper>
       <Menu />
-      <Routes />
+      <AppRoutes />
     </PageWrapper>
   );
 }
-
-export default App;

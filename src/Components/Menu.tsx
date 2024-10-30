@@ -50,7 +50,7 @@ const Menu = () => {
       <Nav>
         <NavItem onClick={() => navigate.goTo('/')}>About</NavItem>
         <NavItem onClick={() => navigate.goTo('/dashboard')}>Dashboard</NavItem>
-        <NavItem href="/product">Product</NavItem>
+        <NavItem onClick={() => navigate.goTo('/info')}>Informações</NavItem>
         <NavItem href="/features">Features</NavItem>
         <NavItem href="/news">News</NavItem>
         <NavItem href="/menu">☰</NavItem>
