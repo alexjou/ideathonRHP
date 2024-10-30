@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import imgLogo from '../assets/photo.png';
-import { FaSearch } from "react-icons/fa";
+import imgLogo from '../assets/Ellipse 18.svg';
+import { CiSearch } from "react-icons/ci";
 
 const ContainerHeader = styled.div`
   display: flex;
@@ -12,24 +12,26 @@ const ContainerSearch = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 500px;
-  height: 50px;
+  width: 586px;
+  height: 51px;
   border-radius: 50px;
-  border: 2px solid #ccc;
+  border: 2px solid #E1E1E1;
   background-color:transparent;
   outline: none;
 `;
 
 const Input = styled.input`
   width: 90%;
+  color: #E1E1E1;
   border: none;
   outline: none;
-  padding: 5px;
+  padding: 0;
   font-size: 16px;
   background-color: transparent;
 
   &::placeholder {
-    color: #ccc;
+    color: #E1E1E1;
+    font-size: 1.2em;
   }
 `;
 
@@ -41,26 +43,48 @@ const ContainerUserPhoto = styled.div`
 const ContainerUser = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: end;
   padding-right: 20px;
+
+  p:first-child {
+    color: var(--Color-color-style-Base-white-base, #FFF);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  p:last-child {
+    color: var(--Color-color-style-Base-white-base, #FFF);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
   `;
 
 const ImgUser = styled.img`
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  border: 5px solid #202625;
+  border-radius: 68px;
+  background: url(<path-to-image>) lightgray 50% / cover no-repeat, #D9D9D9;
+  width: var(--Spacing-Font-size-H1, 68px);
+  height: var(--Spacing-Font-size-H1, 68px);
+  flex-shrink: 0;
 `;
 
 const Header = () => {
   return (
     <ContainerHeader>
       <ContainerSearch>
-        <FaSearch />
+        <CiSearch style={ { fontSize:"1.5em", marginLeft:"15px" } } />
         <Input type="text" placeholder="Pesquisar..." />
       </ContainerSearch>
       <ContainerUserPhoto>
         <ContainerUser>
           <p>Olá, Bruno Costa</p>
-          <p>Infermeiro</p>
+          <p>Enfermeiro</p>
         </ContainerUser>
         <ImgUser src={ imgLogo } alt="" />
       </ContainerUserPhoto>
