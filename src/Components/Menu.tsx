@@ -1,7 +1,7 @@
 // Header.tsx
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo1.png';
 import useNavigationHook from "../hooks/useNavigationHook";
 
 const HeaderWrapper = styled.header`
@@ -13,7 +13,7 @@ const HeaderWrapper = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: #2D393D;
+  background-color: #F1FAF9;
 `;
 
 const Logo = styled.img`
