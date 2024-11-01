@@ -21,7 +21,7 @@ const ContainerSalas = styled.div`
   height: 540px;
   flex-shrink: 0;
   border-radius: 18px;
-  background: #2D393D;
+  background: #F1FAF9;
 `;
 
 const TitleSalas = styled.h2`

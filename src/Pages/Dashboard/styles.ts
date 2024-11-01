@@ -31,7 +31,7 @@ export const ContainerChat = styled.div`
   text-align: center;
   right: 50px;
   bottom: 50px;
-  background-color: #2D393D;
+  background-color: #006035;
   border-radius: 50%;
 
   img {
