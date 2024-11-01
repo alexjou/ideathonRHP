@@ -6,7 +6,7 @@ const Cards = styled.div`
   flex-direction: column;
 
   h1:first-child {
-    color: #E1E1E1;
+    color: #2D393D;
     font-family: Poppins;
     font-size: 40px;
     font-style: normal;
@@ -59,11 +59,8 @@ const ScrollButton = styled.button`
   color: #2D393D;
   padding: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: #5A6A6E;
-  }
+
 `;
 const NumberContainer = styled.div`
   display: flex;

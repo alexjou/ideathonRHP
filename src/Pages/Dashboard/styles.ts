@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 100px;
+  font-family: "Poppins", sans-serif;
 `;
 
 export const ContainerCards = styled.div`
@@ -14,8 +15,8 @@ export const ContainerCards = styled.div`
 
 export const TitleNotificacoes = styled.h1`
   margin: 35px 150px;
-  color: #E1E1E1;
-  font-family: Poppins;
+  color: #2D393D;
+  font-family: "Poppins", sans-serif;
   font-size: 40px;
   font-weight: 600;
 `;

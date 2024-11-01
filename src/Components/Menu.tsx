@@ -32,7 +32,7 @@ const NavItem = styled.a`
   position: relative;
   text-decoration: none; /* Remove a decoração padrão */
   padding: 10px 0; /* Espaçamento em cima e embaixo */
-  color: #fff; /* Ajuste a cor conforme necessário */
+  color: #2D393D; /* Ajuste a cor conforme necessário */
 
   &:hover
   {
