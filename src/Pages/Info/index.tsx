@@ -24,14 +24,25 @@ const dataPacientes = [
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
 
 export default function Info() {
+  const PAGE_SIZE = 4; // Número de salas por página
+  const [currentPage, setCurrentPage] = useState(0);
   const [selectedSala, setSelectedSala] = useState(salas[0]);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const offset = -currentPage * (0.5 / PAGE_SIZE); 
 
-  const scroll = (scrollOffset: number) => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollLeft += scrollOffset;
+  const handleNextPage = () => {
+    if ((currentPage + 1) * PAGE_SIZE < salas.length) {
+      setCurrentPage(currentPage + 1);
     }
   };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  // Salas a serem exibidas na página atual
+  const displayedSalas = salas.slice(currentPage * PAGE_SIZE, (currentPage + 1) * PAGE_SIZE);
 
   return (
     <Container>
@@ -41,9 +52,9 @@ export default function Info() {
           <h1>Nº INTERNAÇÕES</h1>
           <ContainerInformations>
             <ScrollContainer>
-              <ScrollButton onClick={() => scroll(-100)}>{'<'}</ScrollButton>
-              <ScrollContent ref={scrollRef}>
-                {salas.map((sala) => (
+              <ScrollButton onClick={handlePreviousPage} disabled={currentPage === 0}>{'<'}</ScrollButton>
+              <ScrollContent style={{ transform: `translateX(${offset}%)` }}>
+                {displayedSalas.map((sala) => (
                   <SalaTab
                     key={sala}
                     isSelected={sala === selectedSala}
@@ -53,7 +64,7 @@ export default function Info() {
                   </SalaTab>
                 ))}
               </ScrollContent>
-              <ScrollButton onClick={() => scroll(100)}>{'>'}</ScrollButton>
+              <ScrollButton onClick={handleNextPage} disabled={(currentPage + 1) * PAGE_SIZE >= salas.length}>{'>'}</ScrollButton>
             </ScrollContainer>
             <PieChart width={300} height={300}>
               <Pie
@@ -83,8 +94,8 @@ export default function Info() {
           <h1>QUADRO CLÍNICO</h1>
           <ContainerInformations>
             <ScrollContainer>
-              <ScrollButton onClick={() => scroll(-100)}>{'<'}</ScrollButton>
-              <ScrollContent ref={scrollRef}>
+            <ScrollButton onClick={handlePreviousPage} disabled={currentPage === 0}>{'<'}</ScrollButton>
+            <ScrollContent style={{ transform: `translateX(${offset}%)` }}>
                 {salas.map((sala) => (
                   <SalaTab
                     key={sala}
@@ -95,7 +106,7 @@ export default function Info() {
                   </SalaTab>
                 ))}
               </ScrollContent>
-              <ScrollButton onClick={() => scroll(100)}>{'>'}</ScrollButton>
+              <ScrollButton onClick={handleNextPage} disabled={(currentPage + 1) * PAGE_SIZE >= salas.length}>{'>'}</ScrollButton>
             </ScrollContainer>
             <BarChart
               width={300}

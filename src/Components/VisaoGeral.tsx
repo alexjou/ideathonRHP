@@ -136,14 +136,14 @@ const LeitoEmHigienização = styled.div`
     height: 18px;
     flex-shrink: 0;
     border-radius: 18px;
-    background: #FFE07B;
+    background: #FFB266;
   }
 
   p {
     width: 31.665px;
     height: 18px;
     flex-shrink: 0;
-    color: #FFE07B;
+    color: #FFB266;
     font-family: Poppins;
     font-size: 14px;
     font-weight: 600;
