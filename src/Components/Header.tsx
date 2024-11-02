@@ -15,8 +15,7 @@ const ContainerSearch = styled.div`
   width: 586px;
   height: 51px;
   border-radius: 50px;
-  border: 2px solid #E1E1E1;
-  background-color:transparent;
+  background-color: #BDD3CC;
   outline: none;
 `;
 
@@ -38,6 +37,8 @@ const Input = styled.input`
 const ContainerUserPhoto = styled.div`
   display: flex;
   align-items: center;
+  background-color: #F1FAF9;
+  border-radius: 15px;
   `;
 
 const ContainerUser = styled.div`
@@ -45,9 +46,10 @@ const ContainerUser = styled.div`
   flex-direction: column;
   align-items: end;
   padding-right: 20px;
+  margin-left: 5px;
 
   p:first-child {
-    color: var(--Color-color-style-Base-white-base, #FFF);
+    color: #2D393D;
     font-family: Poppins;
     font-size: 20px;
     font-style: normal;
@@ -56,7 +58,7 @@ const ContainerUser = styled.div`
   }
 
   p:last-child {
-    color: var(--Color-color-style-Base-white-base, #FFF);
+    color: #2D393D;
     font-family: Poppins;
     font-size: 16px;
     font-style: normal;
@@ -66,7 +68,7 @@ const ContainerUser = styled.div`
   `;
 
 const ImgUser = styled.img`
-  border: 5px solid #202625;
+  border: 5px solid #D8EDE3;
   border-radius: 68px;
   background: url(<path-to-image>) lightgray 50% / cover no-repeat, #D9D9D9;
   width: var(--Spacing-Font-size-H1, 68px);

@@ -9,7 +9,7 @@ const ChartContainer = styled.div`
 `;
 
 const Title = styled.h4`
-  color: #FFFFFF;
+  color: #2D393D;
   text-align: center;
   margin-bottom: 10px;
 `;
@@ -54,22 +54,22 @@ const WeeklyFlowChart: React.FC<WeeklyFlowChartProps> = ({ dados }) => {
           <CartesianGrid strokeDasharray="3 3" stroke="#4A5A5E" />
           <XAxis
             dataKey="dia"
-            stroke="#FFFFFF"
-            tick={{ fill: '#FFFFFF' }}
+            stroke="#"
+            tick={{ fill: '#' }}
           />
           <YAxis
-            stroke="#FFFFFF"
-            tick={{ fill: '#FFFFFF' }}
+            stroke="#"
+            tick={{ fill: '#' }}
           />
           <Tooltip
             contentStyle={{
               backgroundColor: '#2D393D',
               border: '1px solid #4A5A5E',
-              color: '#FFFFFF'
+              color: '#2D393D'
             }}
           />
           <Legend
-            wrapperStyle={{ color: '#FFFFFF' }}
+            wrapperStyle={{ color: '#2D393D' }}
           />
           <Line
             type="monotone"

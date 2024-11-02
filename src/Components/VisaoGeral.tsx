@@ -7,7 +7,7 @@ const CardVisaoGeral = styled.div`
 
   h1:first-child {
     margin-bottom: 25px;
-    color: #E1E1E1;
+    color: #2D393D;
     font-family: Poppins;
     font-size: 40px;
     font-style: normal;
@@ -21,7 +21,7 @@ const ContainerSalas = styled.div`
   height: 540px;
   flex-shrink: 0;
   border-radius: 18px;
-  background: #2D393D;
+  background: #F1FAF9;
 `;
 
 const TitleSalas = styled.h2`
@@ -35,8 +35,8 @@ const TitleSalas = styled.h2`
     height: 36px;
     flex-shrink: 0;
     border-radius: 0px 41px 41px 0px;
-    background: #BEC9D8;
-    color: #2D393D;
+    background: #E98676;
+    color: #F1FAF9;
     font-size: 24px;
     
 `;
@@ -49,7 +49,7 @@ margin: 20px;
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
-  color: #F8F8F8;
+  color: #2D393D;
   font-family: Poppins;
   font-size: 31px;
   font-style: normal;
@@ -71,7 +71,10 @@ const CardSalas = styled.div`
   height: 154.194px;
   flex-shrink: 0;
   border-radius: 18px;
-  background: #4A5F63;
+  border: 2px solid #2D393D36;
+  color: #A54048;
+  font-weight: 600;
+  
 
   h2 {
     display: flex;
@@ -80,7 +83,7 @@ const CardSalas = styled.div`
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
-    color: #F8F8F8;
+    color: #2D393D;
     text-align: center;
     font-family: Poppins;
     font-size: 27px;
@@ -98,7 +101,7 @@ const Leitos = styled.div`
   height: 38.548px;
   flex-shrink: 0;
   border-radius: 18px;
-  background: #2D393D;
+  background: #D8EDE2;
 `;
 
 const LeitoLivre = styled.div`

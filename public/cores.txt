@@ -1,0 +1,13 @@
+#F1FAF9 - branco (navbar e caixinhas)
+#D8EDE3 - fundo
+#B8DBBF - caixinha verde
+#2D393D - preto texto
+#E98676 - vermelho claro (destaques)
+#2D393D36 (21% opacidade) - cinza (bordas)
+#006035 - verde escuro (selecionados)
+#D8EDE2 - verde claro (sub-caixinhas)
+#BDD3CC - fundo barra de pesquisa
+
+#FA7A7A - vermelho leitos
+#66D766 - verde leitos
+#FFD283 - amarelo leitos
