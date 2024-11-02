@@ -237,8 +237,8 @@ const GestaoDeLeitos = () => {
             </ContainerDescriptionHigienizacao>
           </DescriptionItem>
           <DescriptionItem>
-             <ColorBox color="#FF6B6B" />
-             <span style={ { color:"#FF6B6B" } }>Ocupado</span>
+              <ColorBox color="#FF6B6B" />
+              <span style={ { color:"#FF6B6B" } }>Ocupado</span>
           </DescriptionItem>
         </DescriptionContainer>
       </ContainerInformations>
