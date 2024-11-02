@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import logo from '../assets/logo1.png';
 import useNavigationHook from "../hooks/useNavigationHook";
+import info from '../assets/info.png';
 
 const HeaderWrapper = styled.header`
   display: flex;
@@ -45,12 +46,23 @@ const Menu = () => {
   const navigate = useNavigationHook();
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper className='logo-click'>
       <Logo src={logo} alt="VitalMap Logo" />
       <Nav>
         <NavItem onClick={() => navigate.goTo('/')}>About</NavItem>
         <NavItem onClick={() => navigate.goTo('/dashboard')}>Dashboard</NavItem>
-        <NavItem onClick={() => navigate.goTo('/info')}>Informações</NavItem>
+        <NavItem onClick={() => navigate.goTo('/info')}>
+    <img 
+      src={info} 
+      alt="Informações" 
+      style={{ 
+        width: '20px', 
+        height: '20px', 
+        marginRight: '5px', 
+        verticalAlign: 'middle' 
+      }} 
+    />
+  </NavItem>
         <NavItem href="/features">Features</NavItem>
         <NavItem href="/news">News</NavItem>
         <NavItem href="/menu">☰</NavItem>
