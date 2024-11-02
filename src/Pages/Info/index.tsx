@@ -53,7 +53,7 @@ export default function Info() {
           <ContainerInformations>
             <ScrollContainer>
               <ScrollButton onClick={handlePreviousPage} disabled={currentPage === 0}>{'<'}</ScrollButton>
-              <ScrollContent style={{ transform: `translateX(${offset}%)` }}>
+              <ScrollContent className="ScrollContent" style={{ transform: `translateX(${offset}%)` }}>
                 {displayedSalas.map((sala) => (
                   <SalaTab
                     key={sala}

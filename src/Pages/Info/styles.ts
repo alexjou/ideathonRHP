@@ -45,6 +45,7 @@ export const ScrollContent = styled.div`
   overflow-x: hidden;
   scroll-behavior: smooth;
   width: 345px;
+  transition: transform 0.5s ease; /* Adiciona uma transição suave */
 `;
 
 export const SalaTab = styled.div<{ isSelected: boolean }>`
