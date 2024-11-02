@@ -2,8 +2,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from '../assets/logo1.png';
+import IconHome from '../assets/home.png';
+import IconDashboard from '../assets/bed.png';
+import IconUser from '../assets/user.png';
+import IconInfo from '../assets/info.png';
+import IconSetting from '../assets/settings.png';
+import IconExit from '../assets/exit.png';
 import useNavigationHook from "../hooks/useNavigationHook";
-import info from '../assets/info.png';
+
 
 const HeaderWrapper = styled.header`
   display: flex;
@@ -13,33 +19,56 @@ const HeaderWrapper = styled.header`
   height: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
   background-color: #F1FAF9;
 `;
 
 const Logo = styled.img`
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 `;
 
 const Nav = styled.nav`
   display: flex;;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
   gap: 80px;
+  width: 100%;
+  height: 100%;
   position: relative; /* Necessário para o pseudo-elemento */
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  a {
+    width: 100%;
+  }
 `;
 
 const NavItem = styled.a`
   position: relative;
-  text-decoration: none; /* Remove a decoração padrão */
-  padding: 10px 0; /* Espaçamento em cima e embaixo */
-  color: #2D393D; /* Ajuste a cor conforme necessário */
+  padding: 8px;
+  padding-right: 25px;
+  border-radius: 20px 0 0 20px;
 
   &:hover
   {
-    color: #ff6f61; /* Ajuste a cor conforme necessário */
+    background-color: #006035; /* Ajuste a cor conforme necessário */
     cursor: pointer; /* Muda o cursor do mouse */
   }
+`;
+
+const IconMenu = styled.img`
+  width: 100%;
+  width: 25px;
+  height: 25px;
+  margin: 15px 5px;
 `;
 
 const Menu = () => {
@@ -49,23 +78,28 @@ const Menu = () => {
     <HeaderWrapper className='logo-click'>
       <Logo src={logo} alt="VitalMap Logo" />
       <Nav>
-        <NavItem onClick={() => navigate.goTo('/')}>About</NavItem>
-        <NavItem onClick={() => navigate.goTo('/dashboard')}>Dashboard</NavItem>
-        <NavItem onClick={() => navigate.goTo('/info')}>
-    <img 
-      src={info} 
-      alt="Informações" 
-      style={{ 
-        width: '20px', 
-        height: '20px', 
-        marginRight: '5px', 
-        verticalAlign: 'middle' 
-      }} 
-    />
-  </NavItem>
-        <NavItem href="/features">Features</NavItem>
-        <NavItem href="/news">News</NavItem>
-        <NavItem href="/menu">☰</NavItem>
+        <div>
+          <NavItem onClick={() => navigate.goTo('/')}>
+            <IconMenu src={IconHome} alt="page-Home" />
+          </NavItem>
+          <NavItem onClick={() => navigate.goTo('/dashboard')}>
+            <IconMenu src={IconDashboard} alt="page- Dashboard" />
+          </NavItem>
+          <NavItem onClick={() => navigate.goTo('/info')}>
+            <IconMenu src={IconInfo} alt="page-info" />
+          </NavItem>
+        </div>
+        <div>
+          <NavItem href="/features">
+            <IconMenu src={IconUser} alt="page-info" />
+          </NavItem>
+          <NavItem href="/features">
+            <IconMenu src={IconSetting} alt="page-info" />
+          </NavItem>
+          <NavItem href="/features">
+            <IconMenu src={IconExit} alt="page-info" />
+          </NavItem>
+        </div>
       </Nav>
     </HeaderWrapper>
   );

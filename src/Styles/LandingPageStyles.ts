@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import ImgBackground from '../assets/LandingPage.png';
 
 export const PageWrapper = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #4A5F63;
+  background-image: url(${ImgBackground});
   background-size: cover; /* A imagem cobre toda a área */
   background-position: center; /* A imagem fica centralizada */
   background-attachment: fixed; /* A imagem fica fixa ao rolar a página */
