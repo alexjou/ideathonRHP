@@ -6,7 +6,7 @@ const Cards = styled.div`
   flex-direction: column;
 
   h1:first-child {
-    color: #E1E1E1;
+    color: #2D393D;
     font-family: Poppins;
     font-size: 40px;
     font-style: normal;
@@ -22,14 +22,14 @@ const ContainerInformations = styled.div`
   width: 400px;
   height: 400px;
   align-items: center;
-  background-color: #2D393D;
+  background-color: #F1FAF9;
   border-radius: 20px;
 `;
 
 const ScrollContainer = styled.div`
   display: flex;
   align-items: center;
-  background-color: #4A5A5E;
+  background-color: #B8DBBF;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 `;
@@ -45,26 +45,23 @@ const SalaTab = styled.div<{ isSelected: boolean }>`
   padding: 15px;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
-  background-color: ${props => props.isSelected ? '#2D393D' : '#4A5A5E'};
-  color: '#FFFFFF';
+  background-color: ${props => (props.isSelected ? '#F1FAF9' : '#B8DBBF')};
+  color: #2D393D;
   cursor: pointer;
   white-space: nowrap;
-  &:hover {
-    background-color: ${props => props.isSelected ? '#2D393D' : '#5A6A6E'};
-  }
-`;
+  transition: background-color 0.3s ease;
 
+ 
+`;
 const ScrollButton = styled.button`
-  background-color: #4A5A5E;
+  background-color: transparent;
   border: none;
-  color: white;
+  color: #2D393D;
   padding: 10px;
   cursor: pointer;
-  &:hover {
-    background-color: #5A6A6E;
-  }
-`;
 
+
+`;
 const NumberContainer = styled.div`
   display: flex;
   flex-wrap: wrap;

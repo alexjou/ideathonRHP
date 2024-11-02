@@ -18,10 +18,9 @@ margin-left: -200px;
 margin-top: 60px;
   width: 180px;
   border-radius: 20px;
-  background-color: #2D393D;
+  background-color: #F1FAF9;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  color: #fff;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -30,13 +29,13 @@ margin-top: 60px;
 
 const LeitoText = styled.p`
   text-align: center;
-  color: #000;
+  color: #F1FAF9;
   font-weight: bold;
   margin: 0;
 `;
 
 const StyledContainer = styled.div`
-  background-color: #3A4A48;
+  background-color: #D8EDE2;
   padding: 5px;
   border-radius: 20px;
   width: 90%;
