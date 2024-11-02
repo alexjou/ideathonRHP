@@ -65,4 +65,5 @@ export const ScrollButton = styled.button`
   color: #2D393D;
   padding: 10px;
   cursor: pointer;
+  
 `;
