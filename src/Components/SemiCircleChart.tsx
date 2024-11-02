@@ -50,7 +50,7 @@ const SemiCircleChart: React.FC<SemiCircleChartProps> = ({ leitos }) => {
         y={120}
         textAnchor="middle"
         dominantBaseline="middle"
-        fill="#FFFFFF"
+        fill="#2D393D"
         fontSize="12px"
       >
         Tempo médio
@@ -60,7 +60,7 @@ const SemiCircleChart: React.FC<SemiCircleChartProps> = ({ leitos }) => {
         y={135}
         textAnchor="middle"
         dominantBaseline="middle"
-        fill="#FFFFFF"
+        fill="#2D393D"
         fontSize="12px"
       >
         de Internação
@@ -70,7 +70,7 @@ const SemiCircleChart: React.FC<SemiCircleChartProps> = ({ leitos }) => {
         y={160}
         textAnchor="middle"
         dominantBaseline="middle"
-        fill="#FFFFFF"
+        fill="#2D393D"
         style={{ fontSize: '24px', fontWeight: 'bold' }}
       >
         {`${tempoMedioArredondado}h`}

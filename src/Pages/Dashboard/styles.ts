@@ -2,8 +2,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  height: 100vh;
   background-color: #D8EDE3;
-  height: 100%;
   display: flex;
   flex-direction: column;
   margin-left: 100px;

@@ -2,9 +2,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
   margin-left: 100px;
+  color: #2D393D;
+  font-family: "Poppins", sans-serif;
+  background-color: #D8EDE3;
 `;
 
 export const ContainerCards = styled.div`
@@ -24,14 +28,14 @@ export const ContainerInformations = styled.div`
   width: 400px;
   height: 400px;
   align-items: center;
-  background-color: #2D393D;
+  background-color: #F1FAF9;
   border-radius: 20px;
 `;
 
 export const ScrollContainer = styled.div`
   display: flex;
   align-items: center;
-  background-color: #4A5A5E;
+  background-color: #B8DBBF;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 `;
@@ -47,22 +51,17 @@ export const SalaTab = styled.div<{ isSelected: boolean }>`
   padding: 15px;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
-  background-color: ${props => props.isSelected ? '#2D393D' : '#4A5A5E'};
-  color: '#FFFFFF';
+  background-color: ${props => props.isSelected ? '#F1FAF9' : '#B8DBBF'};
+  color: '#2D393D';
   cursor: pointer;
   white-space: nowrap;
-  &:hover {
-    background-color: ${props => props.isSelected ? '#2D393D' : '#5A6A6E'};
-  }
+  transition: background-color 0.3s ease;
 `;
 
 export const ScrollButton = styled.button`
-  background-color: #4A5A5E;
+  background-color: transparent;
   border: none;
-  color: white;
+  color: #2D393D;
   padding: 10px;
   cursor: pointer;
-  &:hover {
-    background-color: #5A6A6E;
-  }
 `;
