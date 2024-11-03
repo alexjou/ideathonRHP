@@ -60,6 +60,7 @@ export const TextSection = styled.div`
     border: none;
     background-color: #79B285;
     color: #F1FAF9;
+    font-weight: 600;
     font-size: 32px;
     cursor: pointer;
   }
