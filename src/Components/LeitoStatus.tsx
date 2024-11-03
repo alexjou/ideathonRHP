@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import leitosData from '../data';
 import chairImageGreen from '../assets/cadeira1.png';
-import chairImageYellow from '../assets/cadeira2.png';
+import chairImageYellow from '../assets-landing/leito-laranja.png';
 import chairImageRed from '../assets/cadeira3.png';
 import availableImage from '../assets/icon1.png';
 import cleaningImage from '../assets/icon2.png';
@@ -26,6 +26,7 @@ const LeitosWrapper = styled.div`
 `;
 
 const ChairContainer = styled.div`
+  margin-bottom: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,8 +37,8 @@ const InfoBalloon = styled.div`
   width: 90%;
   display: flex;
   flex-direction: column; 
-  width: 180px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 20%;
   justify-content: center;
   align-items: center;
@@ -52,8 +53,8 @@ const InfoBalloon = styled.div`
 `;
 
 const ChairImage = styled.img`
-  width: 160px;
-  height: 160px;
+  width: 256px;
+  height: 256px;
   margin-top: 10px; /* Adiciona um espaço entre o balão e a cadeira */
 `;
 

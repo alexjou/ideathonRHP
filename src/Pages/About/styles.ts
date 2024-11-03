@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ImgBackground from '../assets/LandingPage.png';
+import ImgBackground from '../../assets-landing/background.png';
 
 export const PageWrapper = styled.div`
   height: 100vh;
@@ -24,31 +24,43 @@ export const ContentWrapper = styled.div`
 `;
 
 export const TextSection = styled.div`
-  width: 40%;
-  color: #fff;
+  font-family: "Poppins", sans-serif;
+  width: 60%;
+  margin-top: 100px;
+ 
 
   h1 {
+    
     margin-left: 150px;
-    font-size: 4rem;
-    color: #fff;
+    font-size: 40px;
+    color: #79B285;
   }
 
   h2 {
+    
     margin-left: 150px;
-    font-size: 2rem;
-    margin-top: 20px;
-    color: #fff;
+    font-size: 48px;
+    color: #2D393D;
+  }
+  p {
+  margin-top: 12px;
+  margin-left: 150px;
+  font-size: 24px;  
+  color: #2D393D;
   }
 
   button {
-    margin-top: 30px;
+    
+    width: 398px;
+    height: 112px;
+    margin-top: 100px;
     margin-left: 150px;
-    padding: 10px 30px;
+    padding: 40px;
     border-radius: 50px;
     border: none;
-    background-color: #ff6f61;
-    color: white;
-    font-size: 1.2rem;
+    background-color: #79B285;
+    color: #F1FAF9;
+    font-size: 32px;
     cursor: pointer;
   }
 `;
