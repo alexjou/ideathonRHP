@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 
 const Cards = styled.div`
+  margin-right: 100px;
   display: flex;
   flex-direction: column;
 
@@ -20,7 +21,7 @@ const ContainerInformations = styled.div`
   display: flex;
   flex-direction: column;
   width: 400px;
-  height: 400px;
+  height: 430px;
   align-items: center;
   background-color: #F1FAF9;
   border-radius: 20px;

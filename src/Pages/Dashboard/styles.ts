@@ -8,11 +8,25 @@ export const Container = styled.div`
   flex-direction: column;
   margin-left: 100px;
   font-family: "Poppins", sans-serif;
+
+   @media (max-width: 768px) {
+    margin-left: 20px;
+  }
 `;
 
 export const ContainerCards = styled.div`
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap; // Permite que os cards se movam para a próxima linha se não houver espaço suficiente
+
+  @media (max-width: 768px) {
+    justify-content: center; // Centraliza os cards em telas menores
+  }
+`;
+
+export const GestaoDeLeitos = styled.div`
+
+
 `;
 
 export const TitleNotificacoes = styled.h1`
@@ -21,6 +35,11 @@ export const TitleNotificacoes = styled.h1`
   font-family: "Poppins", sans-serif;
   font-size: 40px;
   font-weight: 600;
+
+  @media (max-width: 768px) {
+    margin: 20px 20px;
+    font-size: 28px; // Diminui o tamanho da fonte em telas menores
+  }
 `;
 
 export const ContainerChat = styled.div`
@@ -45,5 +64,17 @@ export const ContainerChat = styled.div`
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
+  }
+
+    @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+    right: 20px;
+    bottom: 20px;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
   }
 `;

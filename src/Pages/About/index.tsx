@@ -1,6 +1,6 @@
 import React from 'react';
 import LeitoStatus from '../../Components/LeitoStatus';
-import { ContentWrapper, TextSection, ImagesSection } from '../../Styles/LandingPageStyles';
+import { ContentWrapper, TextSection, ImagesSection } from './styles';
 
 
 function About() {
@@ -10,7 +10,8 @@ function About() {
       <ContentWrapper>
         <TextSection>
           <h1>VITAL MAP</h1>
-          <h2>Com a VitalMap você tem um problema a menos para se preocupar!</h2>
+          <h2>Mais controle, comunicação e eficiência para hospitais.</h2>
+          <p>Nosso sistema ajuda médicos e enfermeiros a visualizarem rapidamente a disponibilidade de leitos,  facilitando decisões ágeis para um atendimento mais eficaz.</p>
           <button>Saiba mais</button>
         </TextSection>
         <ImagesSection>

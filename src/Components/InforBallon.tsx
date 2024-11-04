@@ -14,9 +14,10 @@ interface InfoBalloonProps {
 }
 
 const InfoBalloonContainer = styled.div`
-margin-left: -200px;
-margin-top: 60px;
-  width: 180px;
+margin-left: -140px;
+margin-top: 80px;
+  width: 256px;
+  min-height: 400px;
   border-radius: 20px;
   background-color: #F1FAF9;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -25,9 +26,11 @@ margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
 
 const LeitoText = styled.p`
+  font-size: 20px;
   text-align: center;
   color: #F1FAF9;
   font-weight: bold;
@@ -35,14 +38,16 @@ const LeitoText = styled.p`
 `;
 
 const StyledContainer = styled.div`
+  padding: 8px;
   background-color: #D8EDE2;
-  padding: 5px;
   border-radius: 20px;
   width: 90%;
   display: flex;
+  flex-direction: columm;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 20px;
+  
 `;
 
 const StatusImage = styled.img`
@@ -52,13 +57,16 @@ const StatusImage = styled.img`
 `;
 
 const StatusText = styled.p`
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 20px;
   margin: 0;
 `;
 
 const InfoText = styled.p`
-  font-size: 12px;
-  color: #909B97;
+  
+  font-weight: 600;
+  font-size: 17px;
+  color: #2D393D;
   margin: 5px 0;
 `;
 

@@ -61,6 +61,7 @@ const NavItem = styled.a`
   {
     background-color: #006035; /* Ajuste a cor conforme necessário */
     cursor: pointer; /* Muda o cursor do mouse */
+    transition: 0.5s;
   }
 `;
 
