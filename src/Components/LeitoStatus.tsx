@@ -11,10 +11,21 @@ import occupiedImage from '../assets/icon3.png';
 
 // Definição de tipos
 interface Leito {
-  status: string;
-  numero?: number; // Propriedade opcional
-  andar: number; // Adiciona andar
-  sala: number; // Adiciona sala
+  status: 'Livre' | 'Higienização' | 'Ocupado';
+  numero?: number;
+  andar: number;
+  sala: number;
+}
+
+interface LastUpdated {
+  livre?: number;
+  higienizacao?: number;
+  ocupado?: number;
+}
+
+interface LeitoStatusProps {
+  leitos: Leito[];
+  lastUpdated: LastUpdated;
 }
 
 // Styled components
@@ -90,10 +101,11 @@ const StyledContainer = styled.div`
   margin-top: 10px;
 `;
 
-const LeitoStatus = () => {
-  const generateLeitosData = () => {
+const LeitoStatus: React.FC = () => {
+  // Função para gerar dados de leitos
+  const generateLeitosData = (): Leito[] => {
     const leitos: Leito[] = [];
-    const totalLeitosCount = 800; // Total desejado de leitos
+    const totalLeitosCount = 800;
 
     // Definindo a quantidade de leitos por status
     const statusCounts = {
@@ -102,15 +114,12 @@ const LeitoStatus = () => {
       Ocupado: 100,
     };
 
-    // Enquanto o número total de leitos gerados for menor que o desejado
     while (leitos.length < totalLeitosCount) {
-      // Gera um andar e sala aleatoriamente
-      const andar = Math.floor(Math.random() * 4) + 1; // Andares de 1 a 4
-      const sala = Math.floor(Math.random() * 15) + 1; // Salas de 1 a 15
+      const andar = Math.floor(Math.random() * 4) + 1;
+      const sala = Math.floor(Math.random() * 15) + 1;
 
-      let status = '';
+      let status: 'Livre' | 'Higienização' | 'Ocupado' = 'Livre';
 
-      // Lógica para definir o status do leito baseado nas contagens
       if (statusCounts.Livre > 0) {
         status = 'Livre';
         statusCounts.Livre--;
@@ -123,13 +132,12 @@ const LeitoStatus = () => {
       }
 
       leitos.push({
-        status: status,
-        andar: andar,
-        sala: sala,
+        status,
+        andar,
+        sala,
       });
     }
 
-    // Garante que exatamente 800 leitos foram gerados
     if (leitos.length !== totalLeitosCount) {
       throw new Error(`Número de leitos gerados não corresponde a ${totalLeitosCount}. Gerado: ${leitos.length}`);
     }
@@ -137,9 +145,8 @@ const LeitoStatus = () => {
     return leitos;
   };
 
-  const leitosData = generateLeitosData();
-  const [leitos, setLeitos] = useState<Leito[]>(leitosData);
-  const [lastUpdated, setLastUpdated] = useState<{ livre?: number; higienizacao?: number; ocupado?: number }>({});
+  const [leitos, setLeitos] = useState<Leito[]>(generateLeitosData());
+  const [lastUpdated, setLastUpdated] = useState<LastUpdated>({});
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -149,14 +156,13 @@ const LeitoStatus = () => {
         const statusIndex = Math.floor(Math.random() * 3);
         const updatedLeito = newLeitos[randomLeitoIndex];
 
-        // Randomiza o andar e a sala
-        const andar = Math.floor(Math.random() * 4) + 1; // Andares de 1 a 4
-        const sala = Math.floor(Math.random() * 15) + 1; // Salas de 1 a 15
+        const andar = Math.floor(Math.random() * 4) + 1;
+        const sala = Math.floor(Math.random() * 15) + 1;
 
-        updatedLeito.status = ['Livre', 'higienizacao', 'Ocupado'][statusIndex];
-        updatedLeito.numero = randomLeitoIndex + 1; // Para mostrar o número do leito
-        updatedLeito.andar = andar; // Atribui o andar
-        updatedLeito.sala = sala; // Atribui a sala
+        updatedLeito.status = ['Livre', 'Higienização', 'Ocupado'][statusIndex] as 'Livre' | 'Higienização' | 'Ocupado';
+        updatedLeito.numero = randomLeitoIndex + 1;
+        updatedLeito.andar = andar;
+        updatedLeito.sala = sala;
 
         setLastUpdated((prev) => ({
           ...prev,
@@ -170,21 +176,11 @@ const LeitoStatus = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const statuses = [
-    { label: 'crítico', color: 'red' },
-    { label: 'estável', color: 'orange' },
-    { label: 'recuperando', color: 'green' },
-  ];
-
-
   const leitosCount = {
     Livre: leitos.filter((leito) => leito.status === 'Livre').length,
-    Higienização: leitos.filter((leito) => leito.status === 'higienizacao').length,
+    Higienização: leitos.filter((leito) => leito.status === 'Higienização').length,
     Ocupado: leitos.filter((leito) => leito.status === 'Ocupado').length,
   };
-
-  // Lista de estados do paciente
-  const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
 
   return (
     <LeitosWrapper>
@@ -200,7 +196,10 @@ const LeitoStatus = () => {
           </StyledContainer>
 
           <StyledContainer style={{ width: '90%', marginLeft: 0 }}>
-            <StatusText style={{ fontSize: 12, color: '#909B97' }}>{leitos.find(leito => leito.numero === lastUpdated.livre)?.andar}º andar - Sala {leitos.find(leito => leito.numero === lastUpdated.livre)?.sala}</StatusText>
+            <StatusText style={{ fontSize: 12, color: '#909B97' }}>
+              {leitos.find((leito) => leito.numero === lastUpdated.livre)?.andar}º andar - Sala{' '}
+              {leitos.find((leito) => leito.numero === lastUpdated.livre)?.sala}
+            </StatusText>
           </StyledContainer>
         </InfoBalloon>
         <ChairImage src={chairImageGreen} alt="Cadeira Livre" />
@@ -219,7 +218,10 @@ const LeitoStatus = () => {
           </StyledContainer>
 
           <StyledContainer style={{ width: '90%', marginLeft: 0 }}>
-            <StatusText style={{ fontSize: 12, color: '#909B97' }}>{leitos.find(leito => leito.numero === lastUpdated.higienizacao)?.andar}º andar - Sala {leitos.find(leito => leito.numero === lastUpdated.higienizacao)?.sala}</StatusText>
+            <StatusText style={{ fontSize: 12, color: '#909B97' }}>
+              {leitos.find((leito) => leito.numero === lastUpdated.higienizacao)?.andar}º andar - Sala{' '}
+              {leitos.find((leito) => leito.numero === lastUpdated.higienizacao)?.sala}
+            </StatusText>
           </StyledContainer>
 
           <StyledContainer style={{ width: '90%', marginLeft: 0, flexDirection: 'column', fontSize: 12, color: '#909B97' }}>
@@ -241,11 +243,16 @@ const LeitoStatus = () => {
           </StyledContainer>
 
           <StyledContainer style={{ width: '90%', marginLeft: 0 }}>
-            <StatusText style={{ fontSize: 12, color: '#909B97' }}>{leitos.find(leito => leito.numero === lastUpdated.ocupado)?.andar}º andar - Sala {leitos.find(leito => leito.numero === lastUpdated.ocupado)?.sala}</StatusText>
+            <StatusText style={{ fontSize: 12, color: '#909B97' }}>
+              {leitos.find((leito) => leito.numero === lastUpdated.ocupado)?.andar}º andar - Sala{' '}
+              {leitos.find((leito) => leito.numero === lastUpdated.ocupado)?.sala}
+            </StatusText>
           </StyledContainer>
 
           <StyledContainer style={{ width: '90%', marginLeft: 0 }}>
-            <StatusText style={{ fontSize: 12, color: '#909B97' }}>Paciente <span style={{ color: randomStatus.color }}>{randomStatus.label}</span></StatusText>
+            <StatusText style={{ fontSize: 12, color: '#909B97' }}>
+              Paciente <span style={{ color: 'red' }}>crítico</span>
+            </StatusText>
           </StyledContainer>
 
           <StyledContainer style={{ width: '90%', marginLeft: 0, flexDirection: 'column', fontSize: 12, color: '#909B97' }}>
@@ -253,10 +260,9 @@ const LeitoStatus = () => {
             <StatusText>{Math.floor(Math.random() * 30)} min</StatusText>
           </StyledContainer>
         </InfoBalloon>
-
         <ChairImage src={chairImageRed} alt="Cadeira Ocupada" />
       </ChairContainer>
-    </LeitosWrapper >
+    </LeitosWrapper>
   );
 };
 

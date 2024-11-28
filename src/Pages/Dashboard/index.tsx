@@ -21,7 +21,6 @@ const Dashboard = () => {
           count={0}
         />
       </ContainerCards>
-      <TitleNotificacoes>NOTIFICAÇÕES</TitleNotificacoes>
       <ContainerChat>
         <img src={ AssetsChat } alt="" />
       </ContainerChat>

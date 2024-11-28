@@ -1,5 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { generateHospitalData } from '../ApiFicticia/generateHospitalData';
+import LeitoStatus from './LeitoStatus';
 
 const Cards = styled.div`
   margin-right: 100px;
@@ -86,8 +88,6 @@ const NumberBox = styled.div<{ color: string }>`
   font-weight: bold;
 `;
 
-const salas = Array.from({ length: 20 }, (_, i) => `Sala ${i + 1}`);
-
 const statuses = ['livre', 'higienizacao', 'ocupado'];
 const colors = {
   livre: '#66D766',
@@ -167,15 +167,26 @@ const numbers = Array.from({ length: 20 }, (_, i) => {
   };
 });
 
+
+
+const generateLeitos = (numLeitos: number) => {
+  return Array.from({ length: numLeitos }, (_, i) => {
+    const status = statuses[Math.floor(Math.random() * statuses.length)];
+    return {
+      number: (i + 1).toString().padStart(3, '0'),
+      status,
+      color: colors[status as keyof typeof colors],
+      svg: svgs[status as keyof typeof svgs]
+    };
+  });
+};
+
 const GestaoDeLeitos = () => {
   const salas = ['Sala 1', 'Sala 2', 'Sala 3', 'Sala 4', 'Sala 5', 'Sala 6', 'Sala 7', 'Sala 8', 'Sala 9', 'Sala 10', 'Sala 11', 'Sala 12']; 
   const PAGE_SIZE = 4; // Número de salas por página
-  
-  
   const [currentPage, setCurrentPage] = useState(0);
-  const [selectedSala, setSelectedSala] = useState(salas[0]);
-  const offset = -currentPage * (0.5 / PAGE_SIZE); 
-  
+  const [selectedSala, setSelectedSala] = useState('Sala 1');
+  const [leitos, setLeitos] = useState(() => generateLeitos(20)); // Inicializa com 10 leitos aleatórios
 
   const handleNextPage = () => {
     if ((currentPage + 1) * PAGE_SIZE < salas.length) {
@@ -189,9 +200,18 @@ const GestaoDeLeitos = () => {
     }
   };
 
-  // Salas a serem exibidas na página atual
+  // Atualiza os leitos de acordo com a sala selecionada
+  const handleSalaClick = (sala: string) => {
+    setSelectedSala(sala);
+    setLeitos(generateLeitos(20)); // Gera leitos aleatórios para a sala selecionada
+  };
+
+  const offset = -currentPage * (0.5 / PAGE_SIZE);
+
   const displayedSalas = salas.slice(currentPage * PAGE_SIZE, (currentPage + 1) * PAGE_SIZE);
- 
+
+  
+
   return (
     <Cards>
       <h1>GESTÃO DE LEITOS</h1>
@@ -203,7 +223,7 @@ const GestaoDeLeitos = () => {
               <SalaTab
                 key={sala}
                 isSelected={sala === selectedSala}
-                onClick={() => setSelectedSala(sala)}
+                onClick={() => handleSalaClick(sala)} // Atualiza a sala selecionada
               >
                 {sala}
               </SalaTab>
@@ -212,7 +232,7 @@ const GestaoDeLeitos = () => {
           <ScrollButton onClick={handleNextPage} disabled={(currentPage + 1) * PAGE_SIZE >= salas.length}>{'>'}</ScrollButton>
         </ScrollContainer>
         <NumberContainer>
-          {numbers.map((item) => (
+          {leitos.map((item) => (
             <NumberBox key={item.number} color={item.color}>
               <div dangerouslySetInnerHTML={{ __html: item.svg }} />
               {item.number}

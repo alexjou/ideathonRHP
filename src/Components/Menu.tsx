@@ -14,7 +14,7 @@ import useNavigationHook from "../hooks/useNavigationHook";
 const HeaderWrapper = styled.header`
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   width: 100px;
   height: 100%;
   align-items: center;

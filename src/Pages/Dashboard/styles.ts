@@ -43,23 +43,23 @@ export const TitleNotificacoes = styled.h1`
 `;
 
 export const ContainerChat = styled.div`
-  width: 134px;
-  height: 134px;
+  width:  80px;
+  height: 80px;
   flex-shrink: 0;
   display: flex;
-  position: absolute;
+  position: fixed;
   align-items: center;
   justify-content: center;
   text-align: center;
-  right: 50px;
-  bottom: 50px;
+  right: 30px;
+  bottom: 30px;
   background-color: #006035;
   border-radius: 50%;
 
   img {
     display: flex;
-    width: 73px;
-    height: 73px;
+    width: 40px;
+    height: 40px;
     padding: 0px 0px 0px 0.072px;
     justify-content: center;
     align-items: center;
