@@ -45,13 +45,10 @@ const Nav = styled.nav`
     align-items: center;
     width: 80%;
   }
-
-  a {
-    width: 100%;
-  }
 `;
 
 const NavItem = styled.a`
+  width: 100%;
   position: relative;
   padding: 8px;
   padding-right: 25px;
